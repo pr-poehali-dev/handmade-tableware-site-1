@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import Icon from "@/components/ui/icon";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +11,41 @@ const Index = () => {
     email: "",
     message: "",
   });
+
+  const catalogRef = useRef<HTMLDivElement>(null);
+  const productionRef = useRef<HTMLDivElement>(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const contactsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -100px 0px"
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animate-in");
+        }
+      });
+    }, observerOptions);
+
+    const sections = [catalogRef, productionRef, aboutRef, contactsRef];
+    sections.forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => {
+      sections.forEach((ref) => {
+        if (ref.current) {
+          observer.unobserve(ref.current);
+        }
+      });
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -85,7 +120,7 @@ const Index = () => {
       </section>
 
       <section id="catalog" className="py-20 px-6 bg-card">
-        <div className="container mx-auto max-w-6xl">
+        <div ref={catalogRef} className="container mx-auto max-w-6xl opacity-0 translate-y-10 transition-all duration-700">
           <h2 className="text-4xl font-serif font-light text-center mb-4">
             Каталог изделий
           </h2>
@@ -156,7 +191,7 @@ const Index = () => {
       </section>
 
       <section id="production" className="py-20 px-6">
-        <div className="container mx-auto max-w-6xl">
+        <div ref={productionRef} className="container mx-auto max-w-6xl opacity-0 translate-y-10 transition-all duration-700">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="order-2 md:order-1">
               <img
@@ -227,7 +262,7 @@ const Index = () => {
       </section>
 
       <section id="about" className="py-20 px-6 bg-card">
-        <div className="container mx-auto max-w-4xl text-center">
+        <div ref={aboutRef} className="container mx-auto max-w-4xl text-center opacity-0 translate-y-10 transition-all duration-700">
           <h2 className="text-4xl font-serif font-light mb-6">Наш магазин</h2>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
             Мы производственно-торговое предприятие с собственной мастерской
@@ -273,7 +308,7 @@ const Index = () => {
       </section>
 
       <section id="contacts" className="py-20 px-6">
-        <div className="container mx-auto max-w-2xl">
+        <div ref={contactsRef} className="container mx-auto max-w-2xl opacity-0 translate-y-10 transition-all duration-700">
           <h2 className="text-4xl font-serif font-light text-center mb-4">
             Свяжитесь с нами
           </h2>
