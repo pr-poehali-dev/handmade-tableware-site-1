@@ -60,7 +60,7 @@ const Index = () => {
     <div className="min-h-screen">
       <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm z-50 border-b border-border">
         <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold font-serif">Глиняное ремесло</h1>
+          <h1 className="text-2xl font-bold font-serif">сУРАЛа</h1>
           <div className="hidden md:flex gap-8">
             <button
               onClick={() => scrollToSection("catalog")}
@@ -95,11 +95,11 @@ const Index = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in">
               <h2 className="text-5xl md:text-6xl font-serif font-light mb-6 leading-tight">
-                Посуда ручной работы
+                Посуда для ресторанов из сердца России
               </h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Каждое изделие уникально и создано с любовью к ремеслу.
-                Натуральные материалы и традиционные техники гончарства.
+                Уральские художники-керамисты Дмитрий и Дарья создают фарфоровую посуду ручной работы. 
+                Мы любим природную эстетику и создаём изделия, соответствующие высоким мировым стандартам качества.
               </p>
               <Button
                 onClick={() => scrollToSection("catalog")}
@@ -202,12 +202,12 @@ const Index = () => {
             </div>
             <div className="order-1 md:order-2">
               <h2 className="text-4xl font-serif font-light mb-6">
-                Ручная работа
+                Наше производство
               </h2>
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Каждое изделие проходит через руки мастера и создается с
-                особым вниманием к деталям. Мы используем только натуральную
-                глину и экологичные глазури.
+                Семь лет назад мы переехали в деревню и с нуля создали керамическое производство. 
+                Собрали команду и шаг за шагом осваивали изготовление фарфоровой посуды, прорабатывая каждый этап. 
+                В собственной лаборатории создаём уникальные пищевые покрытия.
               </p>
               <div className="space-y-4">
                 <div className="flex gap-4 items-start">
@@ -218,10 +218,10 @@ const Index = () => {
                   />
                   <div>
                     <h3 className="font-semibold mb-1">
-                      Уникальность каждого изделия
+                      Авторская керамика
                     </h3>
                     <p className="text-muted-foreground">
-                      Нет двух одинаковых предметов
+                      Мировые стандарты качества, ручная работа
                     </p>
                   </div>
                 </div>
@@ -233,10 +233,10 @@ const Index = () => {
                   />
                   <div>
                     <h3 className="font-semibold mb-1">
-                      Экологичные материалы
+                      Собственная лаборатория
                     </h3>
                     <p className="text-muted-foreground">
-                      Натуральная глина и безопасные глазури
+                      Уникальные пищевые покрытия и глазури
                     </p>
                   </div>
                 </div>
@@ -248,10 +248,10 @@ const Index = () => {
                   />
                   <div>
                     <h3 className="font-semibold mb-1">
-                      Традиционные техники
+                      Литьё фарфора под давлением
                     </h3>
                     <p className="text-muted-foreground">
-                      Многовековые секреты мастерства
+                      Современные технологии производства
                     </p>
                   </div>
                 </div>
@@ -263,11 +263,11 @@ const Index = () => {
 
       <section id="about" className="py-20 px-6 bg-card">
         <div ref={aboutRef} className="container mx-auto max-w-4xl text-center opacity-0 translate-y-10 transition-all duration-700">
-          <h2 className="text-4xl font-serif font-light mb-6">Наш магазин</h2>
+          <h2 className="text-4xl font-serif font-light mb-6">О нас</h2>
           <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            Мы производственно-торговое предприятие с собственной мастерской
-            и магазином. Вы можете посетить нас, чтобы увидеть процесс
-            создания посуды своими глазами и выбрать изделия лично.
+            Мы — производственно-торговое предприятие из Урала. Работаем с ресторанами и частными клиентами. 
+            Каждый новый проект помогает нам расти и совершенствоваться. Черпаем вдохновение в природе и создаём 
+            изделия с лаконичным дизайном, приятными тактильными покрытиями и теплом ручной работы.
           </p>
           <div className="grid md:grid-cols-3 gap-8 mt-12">
             <Card className="p-6">
@@ -278,7 +278,7 @@ const Index = () => {
               />
               <h3 className="font-serif text-xl mb-2">Адрес</h3>
               <p className="text-muted-foreground">
-                г. Москва, ул. Гончарная, д. 15
+                Урал, Россия
               </p>
             </Card>
             <Card className="p-6">
@@ -287,11 +287,11 @@ const Index = () => {
                 className="mx-auto mb-4 text-primary"
                 size={40}
               />
-              <h3 className="font-serif text-xl mb-2">Режим работы</h3>
+              <h3 className="font-serif text-xl mb-2">Telegram</h3>
               <p className="text-muted-foreground">
-                Пн-Пт: 10:00 - 19:00
+                @suralaceramics
                 <br />
-                Сб-Вс: 11:00 - 17:00
+                851 подписчиков
               </p>
             </Card>
             <Card className="p-6">
@@ -300,8 +300,12 @@ const Index = () => {
                 className="mx-auto mb-4 text-primary"
                 size={40}
               />
-              <h3 className="font-serif text-xl mb-2">Телефон</h3>
-              <p className="text-muted-foreground">+7 (495) 123-45-67</p>
+              <h3 className="font-serif text-xl mb-2">Контакты</h3>
+              <p className="text-muted-foreground text-sm">
+                Покупка: @Dasha_karam<br/>
+                Опт: @krausful<br/>
+                Сотрудничество: @Fedor_Kolpakov
+              </p>
             </Card>
           </div>
         </div>
@@ -374,17 +378,17 @@ const Index = () => {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
-              <h3 className="font-serif text-2xl mb-4">Глиняное ремесло</h3>
+              <h3 className="font-serif text-2xl mb-4">сУРАЛа</h3>
               <p className="opacity-90">
-                Производство и продажа керамической посуды ручной работы
+                Посуда для ресторанов из сердца России
               </p>
             </div>
             <div>
               <h4 className="font-semibold mb-4">Контакты</h4>
               <div className="space-y-2 opacity-90">
-                <p>+7 (495) 123-45-67</p>
-                <p>info@pottery.ru</p>
-                <p>г. Москва, ул. Гончарная, 15</p>
+                <p>@Dasha_karam (покупка)</p>
+                <p>@krausful (опт)</p>
+                <p>Урал, Россия</p>
               </div>
             </div>
             <div>
@@ -397,7 +401,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-primary-foreground/20 pt-8 text-center opacity-75">
-            <p>© 2026 Глиняное ремесло. Все права защищены.</p>
+            <p>© 2026 сУРАЛа. Все права защищены.</p>
           </div>
         </div>
       </footer>
