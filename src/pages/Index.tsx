@@ -293,6 +293,41 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-20 px-6 bg-muted/20">
+        <div className="container mx-auto max-w-6xl">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-serif font-light mb-4">
+              Моменты счастья
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Наша посуда создаёт атмосферу для особенных моментов
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="relative overflow-hidden rounded-lg group">
+              <img
+                src="https://cdn.poehali.dev/projects/37bb90ef-2fba-4aa4-81f5-8f96fb27f865/files/cdc1ac0e-6091-4b76-a194-368b9c7ad014.jpg"
+                alt="Счастливая пара за ужином"
+                className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+                <p className="text-white text-lg font-serif">Уютные вечера вдвоём</p>
+              </div>
+            </div>
+            <div className="relative overflow-hidden rounded-lg group">
+              <img
+                src="https://cdn.poehali.dev/projects/37bb90ef-2fba-4aa4-81f5-8f96fb27f865/files/fbe21686-8891-41de-bd17-35d689997a78.jpg"
+                alt="Друзья за столом"
+                className="w-full h-96 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-6">
+                <p className="text-white text-lg font-serif">Искренние эмоции с близкими</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="catalog" className="py-20 px-6">
         <div ref={catalogRef} className="container mx-auto max-w-6xl opacity-0 translate-y-10 transition-all duration-700">
           <div className="text-center mb-12">
@@ -445,12 +480,38 @@ const Index = () => {
             </Card>
           </div>
 
-          <div className="bg-card p-8 rounded-lg">
-            <img
-              src="https://cdn.poehali.dev/projects/37bb90ef-2fba-4aa4-81f5-8f96fb27f865/files/690208d6-22ad-474c-a0dd-e94d3831ffac.jpg"
-              alt="Ресторанная сервировка"
-              className="w-full h-96 object-cover rounded-lg mb-6"
-            />
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="p-0 overflow-hidden">
+              <img
+                src="https://cdn.poehali.dev/projects/37bb90ef-2fba-4aa4-81f5-8f96fb27f865/files/1b34f265-451b-47ef-be03-fe0b751dfe50.jpg"
+                alt="Шеф-повар с блюдом"
+                className="w-full h-80 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-serif mb-3">Для профессионалов</h3>
+                <p className="text-muted-foreground text-sm">
+                  Шеф-повара выбирают нашу посуду за качество, которое подчёркивает 
+                  мастерство кулинарного искусства
+                </p>
+              </div>
+            </Card>
+            <Card className="p-0 overflow-hidden">
+              <img
+                src="https://cdn.poehali.dev/projects/37bb90ef-2fba-4aa4-81f5-8f96fb27f865/files/621f4bad-b5ce-4bcd-9a47-55f1a23d0260.jpg"
+                alt="Утренний кофе"
+                className="w-full h-80 object-cover"
+              />
+              <div className="p-6">
+                <h3 className="text-xl font-serif mb-3">Каждый день особенный</h3>
+                <p className="text-muted-foreground text-sm">
+                  Превращаем обычное утро в ритуал наслаждения — тепло керамики 
+                  в ваших руках создаёт уют
+                </p>
+              </div>
+            </Card>
+          </div>
+          
+          <div className="bg-card p-8 rounded-lg mt-8">
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-3xl font-serif mb-2">7+</div>
@@ -617,23 +678,40 @@ const Index = () => {
       </section>
 
       <section id="about" className="py-20 px-6 bg-card">
-        <div ref={aboutRef} className="container mx-auto max-w-4xl text-center opacity-0 translate-y-10 transition-all duration-700">
-          <h2 className="text-4xl font-serif font-light mb-6">О нас</h2>
-          <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-            сУРАЛа — производственно-торговое предприятие из сердца России. 
-            Уральские художники-керамисты Дмитрий и Дарья семь лет назад переехали 
-            в деревню и создали с нуля керамическое производство. Сегодня мы работаем 
-            с ресторанами по всей России, создаём авторские коллекции и реализуем 
-            индивидуальные проекты для бизнеса.
-          </p>
-          <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-            Каждый новый проект помогает нам расти и совершенствоваться. Мы черпаем 
-            вдохновение в природе и создаём изделия с лаконичным дизайном, приятными 
-            тактильными покрытиями и теплом ручной работы. Наша философия — честное 
-            производство, экологичные материалы и высочайшее качество.
-          </p>
-          <div className="grid md:grid-cols-3 gap-8 mt-12">
-            <Card className="p-6">
+        <div ref={aboutRef} className="container mx-auto max-w-6xl opacity-0 translate-y-10 transition-all duration-700">
+          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h2 className="text-4xl font-serif font-light mb-6">Наша история</h2>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                сУРАЛа — производственно-торговое предприятие из сердца России. 
+                Уральские художники-керамисты Дмитрий и Дарья семь лет назад переехали 
+                в деревню и создали с нуля керамическое производство.
+              </p>
+              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+                Сегодня мы работаем с ресторанами по всей России, создаём авторские 
+                коллекции и реализуем индивидуальные проекты для бизнеса. Каждый новый 
+                проект помогает нам расти и совершенствоваться.
+              </p>
+              <blockquote className="border-l-4 border-primary pl-6 italic text-muted-foreground">
+                "Мы черпаем вдохновение в природе и создаём изделия с лаконичным дизайном, 
+                приятными тактильными покрытиями и теплом ручной работы"
+              </blockquote>
+            </div>
+            <div className="relative">
+              <img
+                src="https://cdn.poehali.dev/projects/37bb90ef-2fba-4aa4-81f5-8f96fb27f865/files/06f72e46-486b-42c2-803f-d28edd632c19.jpg"
+                alt="Мастерская"
+                className="rounded-lg shadow-2xl"
+              />
+              <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground p-6 rounded-lg shadow-xl">
+                <div className="text-3xl font-serif mb-1">Since 2016</div>
+                <p className="text-sm opacity-90">Made in Russia</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <Card className="p-6 text-center hover:shadow-xl transition-shadow">
               <Icon
                 name="Heart"
                 className="mx-auto mb-4 text-primary"
@@ -641,10 +719,10 @@ const Index = () => {
               />
               <h3 className="font-serif text-xl mb-2">Ручная работа</h3>
               <p className="text-muted-foreground text-sm">
-                Каждое изделие проходит через руки мастера
+                Каждое изделие проходит через руки мастера и несёт тепло творчества
               </p>
             </Card>
-            <Card className="p-6">
+            <Card className="p-6 text-center hover:shadow-xl transition-shadow">
               <Icon
                 name="Leaf"
                 className="mx-auto mb-4 text-primary"
@@ -652,10 +730,10 @@ const Index = () => {
               />
               <h3 className="font-serif text-xl mb-2">Эко-материалы</h3>
               <p className="text-muted-foreground text-sm">
-                Натуральная глина и безопасные глазури
+                Натуральная глина и безопасные глазури для вашего здоровья
               </p>
             </Card>
-            <Card className="p-6">
+            <Card className="p-6 text-center hover:shadow-xl transition-shadow">
               <Icon
                 name="Award"
                 className="mx-auto mb-4 text-primary"
@@ -663,7 +741,7 @@ const Index = () => {
               />
               <h3 className="font-serif text-xl mb-2">Высокое качество</h3>
               <p className="text-muted-foreground text-sm">
-                Соответствие мировым стандартам
+                Соответствие мировым стандартам ресторанной посуды
               </p>
             </Card>
           </div>
