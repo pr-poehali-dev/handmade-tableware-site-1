@@ -75,10 +75,16 @@ const Index = () => {
               Производство
             </button>
             <button
+              onClick={() => scrollToSection("services")}
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              Для ресторанов
+            </button>
+            <button
               onClick={() => scrollToSection("about")}
               className="text-foreground hover:text-primary transition-colors"
             >
-              Магазин
+              О нас
             </button>
             <button
               onClick={() => scrollToSection("contacts")}
@@ -98,15 +104,25 @@ const Index = () => {
                 Посуда для ресторанов из сердца России
               </h2>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Уральские художники-керамисты Дмитрий и Дарья создают фарфоровую посуду ручной работы. 
-                Мы любим природную эстетику и создаём изделия, соответствующие высоким мировым стандартам качества.
+                Производим авторскую керамику для ресторанов и отелей. Предлагаем готовые коллекции на OZON 
+                и контрактное производство посуды по вашему дизайну. Высокие мировые стандарты качества.
               </p>
-              <Button
-                onClick={() => scrollToSection("catalog")}
-                className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-lg"
-              >
-                Смотреть каталог
-              </Button>
+              <div className="flex flex-wrap gap-4">
+                <Button
+                  onClick={() => scrollToSection("services")}
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-lg"
+                >
+                  Для ресторанов
+                </Button>
+                <Button
+                  onClick={() => window.open('https://www.ozon.ru', '_blank')}
+                  variant="outline"
+                  className="px-8 py-6 text-lg border-primary text-primary hover:bg-primary/10"
+                >
+                  Купить на OZON
+                </Button>
+              </div>
+
             </div>
             <div className="animate-scale-in">
               <img
@@ -122,11 +138,20 @@ const Index = () => {
       <section id="catalog" className="py-20 px-6 bg-card">
         <div ref={catalogRef} className="container mx-auto max-w-6xl opacity-0 translate-y-10 transition-all duration-700">
           <h2 className="text-4xl font-serif font-light text-center mb-4">
-            Каталог изделий
+            Наши изделия
           </h2>
-          <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
-            Коллекция уникальной керамической посуды для вашего дома
+          <p className="text-center text-muted-foreground mb-4 max-w-2xl mx-auto">
+            Коллекция авторской керамики для ресторанов и розничных покупателей
           </p>
+          <div className="text-center mb-16">
+            <Button
+              onClick={() => window.open('https://www.ozon.ru', '_blank')}
+              className="bg-primary text-primary-foreground hover:bg-primary/90"
+            >
+              <Icon name="ShoppingCart" size={20} className="mr-2" />
+              Купить в розницу на OZON
+            </Button>
+          </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
@@ -255,6 +280,77 @@ const Index = () => {
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" className="py-20 px-6 bg-muted/30">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-4xl font-serif font-light text-center mb-4">
+            Для ресторанов и оптовых клиентов
+          </h2>
+          <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
+            Помогаем открывать рестораны с уникальной посудой и предоставляем контрактное производство
+          </p>
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Card className="p-8">
+              <Icon name="Store" className="text-primary mb-4" size={48} />
+              <h3 className="text-2xl font-serif mb-4">Готовые коллекции на OZON</h3>
+              <p className="text-muted-foreground mb-6">
+                Закажите нашу коллекцию "ВОСТОК" в розницу через маркетплейс OZON. 
+                Универсальные модели, приятные тактильные покрытия, лаконичный дизайн. 
+                Доступны наборы и отдельные позиции.
+              </p>
+              <Button
+                onClick={() => window.open('https://www.ozon.ru', '_blank')}
+                className="w-full"
+              >
+                <Icon name="ShoppingCart" size={20} className="mr-2" />
+                Купить на OZON
+              </Button>
+            </Card>
+            <Card className="p-8">
+              <Icon name="Factory" className="text-primary mb-4" size={48} />
+              <h3 className="text-2xl font-serif mb-4">Контрактное производство</h3>
+              <p className="text-muted-foreground mb-6">
+                Производим посуду по вашему индивидуальному дизайну. Полный цикл: 
+                от разработки форм и глазурей до серийного производства. 
+                Идеально для ресторанов, отелей и брендов с собственной концепцией.
+              </p>
+              <Button
+                onClick={() => scrollToSection('contacts')}
+                variant="outline"
+                className="w-full"
+              >
+                <Icon name="MessageCircle" size={20} className="mr-2" />
+                Обсудить проект
+              </Button>
+            </Card>
+          </div>
+          <div className="bg-card p-8 rounded-lg">
+            <h3 className="text-2xl font-serif mb-4 text-center">Наши преимущества для бизнеса</h3>
+            <div className="grid md:grid-cols-4 gap-6 mt-8">
+              <div className="text-center">
+                <Icon name="Award" className="mx-auto text-primary mb-3" size={36} />
+                <h4 className="font-semibold mb-2">Высокое качество</h4>
+                <p className="text-sm text-muted-foreground">Мировые стандарты производства</p>
+              </div>
+              <div className="text-center">
+                <Icon name="Palette" className="mx-auto text-primary mb-3" size={36} />
+                <h4 className="font-semibold mb-2">Индивидуальный дизайн</h4>
+                <p className="text-sm text-muted-foreground">Создаём уникальные формы и глазури</p>
+              </div>
+              <div className="text-center">
+                <Icon name="TrendingUp" className="mx-auto text-primary mb-3" size={36} />
+                <h4 className="font-semibold mb-2">Масштабирование</h4>
+                <p className="text-sm text-muted-foreground">От малых до крупных партий</p>
+              </div>
+              <div className="text-center">
+                <Icon name="Users" className="mx-auto text-primary mb-3" size={36} />
+                <h4 className="font-semibold mb-2">Опытная команда</h4>
+                <p className="text-sm text-muted-foreground">7 лет на рынке керамики</p>
               </div>
             </div>
           </div>
